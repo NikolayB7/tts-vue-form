@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Детали поездки",
+    "btn_next_step_text": "Выбор автомобиля",
+    "description": "Описание тест",
+    "fields": [
+      {
+        "type_block": "select",
+        "field_name": "city_1",
+        "type": "text",
+        "label": "Откуда",
+        "required": true,
+        "placeholder": "Введите место"
+      },
+      {
+        "type_block": "select",
+        "field_name": "city_2",
+        "type": "text",
+        "label": "Куда",
+        "required": true,
+        "placeholder": "Введите место"
+      },
+      {
+        "type_block": "date",
+        "field_name": "date",
+        "type": "text",
+        "label": "Дата и время",
+        "required": true,
+        "placeholder": "Выберите дату"
+      },
+      {
+        "type_block": "checkbox",
+        "field_name": "reverse",
+        "type": "checkbox",
+        "label": "Включить обратный трансфер",
+        "required": true
+      },
+      {
+        "type_block": "date",
+        "field_name": "date2",
+        "type": "text",
+        "label": "Дата обратного трансфера",
+        "required": true,
+        "placeholder": "Выберите дату"
+      },
+      {
+        "type_block": "input",
+        "field_name": "message",
+        "type": "textarea",
+        "rows": 5,
+        "label": "Комменттарий к заказу",
+        "required": false,
+        "placeholder": "Укажите важные детали вашей поездки:номер рейса/гостиница/особые требования"
+      },
+      {
+        "type_block": "input",
+        "field_name": "children",
+        "type": "number",
+        "label": "Количество детей путешествующих с вами",
+        "required": false,
+        "placeholder": "Количество детей"
+      },
+      {
+        "type_block": "input",
+        "field_name": "chair",
+        "type": "number",
+        "rows": 5,
+        "label": "Количетсво детских кресел",
+        "required": false,
+        "placeholder": "Введите количество детских кресел"
+      }
+    ]
+  },
+  {
+    "title": "Выберите автомобиль",
+    "btn_next_step_text": "Контактные данные",
+    "description": "Описание тест",
+    "fields": [
+      {
+        "type_block": "car",
+        "field_name": "car"
+      }
+    ]
+  },
+  {
+    "title": "Детали клиента",
+    "btn_next_step_text": "Заказать поездку",
+    "description": "Описание тест",
+    "fields": [
+      {
+        "type_block": "input",
+        "field_name": "name",
+        "type": "text",
+        "label": "Введите имя",
+        "required": true,
+        "placeholder": "Как вас зовут?"
+      },
+      {
+        "type_block": "input",
+        "field_name": "email",
+        "type": "text",
+        "label": "Ваш email",
+        "required": true,
+        "placeholder": "Ваш адрес эл.почты"
+      },
+      {
+        "type_block": "phone",
+        "field_name": "phone",
+        "type": "number",
+        "label": "Телефон",
+        "required": true,
+        "placeholder": "Введите телефон"
+      }
+    ]
+  }
+]
