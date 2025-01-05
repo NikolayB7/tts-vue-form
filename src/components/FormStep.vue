@@ -43,6 +43,7 @@ const validateStep = inject('validateStep')
               :label="field.label"
               :field_name="field.field_name"
               :type="field.type"
+              :iteration="iteration"
               :placeholder="field.placeholder"
           />
         </div>
