@@ -35,7 +35,7 @@ const renderEditInfo = computed(() => {
   return allFormStep.value.map((step) => {
     const stepInfo = {};
     step.fields.forEach((field) => {
-      stepInfo[field.field_name] = formValues.value[field.field_name];
+      stepInfo[field.field_name_edit_text] = formValues.value[field.field_name_edit_text];
     });
     return stepInfo;
   });
@@ -68,7 +68,7 @@ const validateStep = (iteration) => {
 
 
 onMounted(()=>{
-  validateStep(1);
+  validateStep(0);
 })
 provide('formValues',formValues)
 provide('renderEditInfo',renderEditInfo)

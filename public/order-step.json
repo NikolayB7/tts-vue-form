@@ -7,6 +7,7 @@
       {
         "type_block": "select",
         "field_name": "city_1",
+        "field_name_edit_text": "Откуда",
         "type": "text",
         "label": "Откуда",
         "required": true,
@@ -15,6 +16,7 @@
       {
         "type_block": "select",
         "field_name": "city_2",
+        "field_name_edit_text": "Куда",
         "type": "text",
         "label": "Куда",
         "required": true,
@@ -23,6 +25,7 @@
       {
         "type_block": "date",
         "field_name": "date",
+        "field_name_edit_text": "Дата и время",
         "type": "text",
         "label": "Дата и время",
         "required": true,
@@ -31,6 +34,7 @@
       {
         "type_block": "checkbox",
         "field_name": "reverse",
+        "field_name_edit_text": "Включить обратный трансфер",
         "type": "checkbox",
         "label": "Включить обратный трансфер",
         "required": true
@@ -38,6 +42,7 @@
       {
         "type_block": "date",
         "field_name": "date2",
+        "field_name_edit_text": "Дата обратного трансфера",
         "type": "text",
         "label": "Дата обратного трансфера",
         "required": true,
@@ -46,6 +51,7 @@
       {
         "type_block": "input",
         "field_name": "message",
+        "field_name_edit_text": "Комменттарий к заказу",
         "type": "textarea",
         "rows": 5,
         "label": "Комменттарий к заказу",
@@ -55,6 +61,7 @@
       {
         "type_block": "input",
         "field_name": "children",
+        "field_name_edit_text": "Количество детей путешествующих с вами",
         "type": "number",
         "label": "Количество детей путешествующих с вами",
         "required": false,
@@ -63,6 +70,7 @@
       {
         "type_block": "input",
         "field_name": "chair",
+        "field_name_edit_text": "Количетсво детских кресел",
         "type": "number",
         "rows": 5,
         "label": "Количетсво детских кресел",
@@ -78,7 +86,8 @@
     "fields": [
       {
         "type_block": "car",
-        "field_name": "car"
+        "field_name": "car",
+        "field_name_edit_text": "car"
       }
     ]
   },
@@ -90,6 +99,7 @@
       {
         "type_block": "input",
         "field_name": "name",
+        "field_name_edit_text": "Введите имя",
         "type": "text",
         "label": "Введите имя",
         "required": true,
@@ -98,6 +108,7 @@
       {
         "type_block": "input",
         "field_name": "email",
+        "field_name_edit_text": "Ваш email",
         "type": "text",
         "label": "Ваш email",
         "required": true,
@@ -106,6 +117,7 @@
       {
         "type_block": "phone",
         "field_name": "phone",
+        "field_name_edit_text": "Телефон",
         "type": "number",
         "label": "Телефон",
         "required": true,
