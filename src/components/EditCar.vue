@@ -15,7 +15,7 @@ const handleInput = (val) => {
     if (getValue) {
         getValue(props.field_name, val);
         // @TODO-NB
-        // validateStep(props.iteration)
+        validateStep(props.iteration + 1)
     }
 };
 </script>

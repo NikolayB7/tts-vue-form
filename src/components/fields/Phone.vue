@@ -2,6 +2,11 @@
 import IntlTelInput from "intl-tel-input/vueWithUtils";
 import "intl-tel-input/styles";
 import {defineProps, inject} from "vue";
+
+defineOptions({
+  inheritAttrs: false
+})
+
 const props = defineProps({
   label: String,
   field_name:String

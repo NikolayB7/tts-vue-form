@@ -11,7 +11,6 @@ const checked=ref(false)
 const getValue = inject('updateValue')
 
 const handleInput = (event) => {
-  console.log(event)
   if (getValue) {
     getValue(props.field_name, event);
   }

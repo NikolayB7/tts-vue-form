@@ -9,7 +9,6 @@ import OrderSidebar from "./components/OrderSidebar.vue";
 
 const formValues = ref({})
 const updateValue = (field, value) => {
-  // console.log(`Field type: ${field}, Value: ${value}`);
   formValues.value[field] = value;
 };
 
@@ -42,7 +41,6 @@ const renderEditInfo = computed(() => {
 });
 
 const validateStep = (iteration) => {
-
   allFormStep.value = allFormStep.value.map((item, index) => {
     let visible = false;
     let edit = false;
