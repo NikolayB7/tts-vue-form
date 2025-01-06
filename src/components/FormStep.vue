@@ -29,7 +29,8 @@ const validateStep = inject('validateStep')
 <template>
   <div class="bg-white rounded-xl shadow-2xl p-3 mb-5" v-auto-animate>
     <h3 class="font-bold text-xl mb-2">{{ step.title }}</h3>
-    <div v-show="step.visible">
+    <Transition name="flash">
+    <div v-if="step.visible">
       <div class="mb-3" v-for="(field, fieldIndex) in step.fields" :key="fieldIndex">
         <component
           :is="fieldComponents[field.type_block]"
@@ -49,8 +50,18 @@ const validateStep = inject('validateStep')
         </button>
       </div>
     </div>
+    </Transition>
     <EditableStep v-if="step.edit" :iteration="iteration" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.flash-enter-active, .flash-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.flash-enter, .flash-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+</style>
