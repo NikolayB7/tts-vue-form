@@ -66,6 +66,13 @@ const validateStep = (iteration) => {
 
 
 onMounted(()=>{
+    OrderStep.forEach(step => {
+        step.fields.forEach(field => {
+            if (!(field.field_name in formValues.value)) {
+                formValues.value[field.field_name] = field.type_block === 'checkbox' ? false : null;
+            }
+        });
+    });
   validateStep(0);
 })
 provide('formValues',formValues)
@@ -93,13 +100,9 @@ provide('validateStep',validateStep)
               v-if="step.visible || step.edit"
               :iteration="index"
               :step="step"
+              :formValues="formValues"
           />
         </div>
-<!--        <div class="flex justify-center">-->
-<!--          <button type="button" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">-->
-<!--            Оформить заявку-->
-<!--          </button>-->
-<!--        </div>-->
       </div>
       <div class="basis-1/3">
         <OrderSidebar :steps="stepsSidebar"/>
