@@ -9,9 +9,9 @@ const props = defineProps({
   label: String,
   field_name: String,
   placeholder: String,
-  type: String
+  type: String,
 })
-const value = ref('')
+const value = ref(props.value)
 const getValue = inject('updateValue')
 
 const handleInput = (event) => {
