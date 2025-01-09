@@ -36,6 +36,7 @@ const handleInput = (val) => {
                 <div v-if="selected">{{car.price}}</div>
             </div>
             <el-tooltip
+                v-if="duration"
                 class="item"
                 effect="dark"
                 :content="`Длительность поездки ${duration}`"

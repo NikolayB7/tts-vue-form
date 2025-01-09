@@ -37,7 +37,7 @@
         "field_name_edit_text": "Включить обратный трансфер",
         "type": "checkbox",
         "label": "Включить обратный трансфер",
-        "required": true
+        "required": false
       },
       {
         "type_block": "date",
@@ -45,7 +45,7 @@
         "field_name_edit_text": "Дата обратного трансфера",
         "type": "text",
         "label": "Дата обратного трансфера",
-        "required": true,
+        "required": false,
         "placeholder": "Выберите дату"
       },
       {
@@ -87,7 +87,8 @@
       {
         "type_block": "car",
         "field_name": "car",
-        "field_name_edit_text": "car"
+        "field_name_edit_text": "car",
+        "required": true
       }
     ]
   },
@@ -111,7 +112,7 @@
         "field_name_edit_text": "Ваш email",
         "type": "text",
         "label": "Ваш email",
-        "required": true,
+        "required": false,
         "placeholder": "Ваш адрес эл.почты"
       },
       {

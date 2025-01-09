@@ -38,6 +38,7 @@ const handleInput = (event) => {
     class="!w-full"
     v-model="value"
     type="datetime"
+    format="YYYY-MM-DD HH:mm"
     @change="handleInput"
     :placeholder="placeholder"
   >
