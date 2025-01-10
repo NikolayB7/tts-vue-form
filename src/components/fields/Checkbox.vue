@@ -8,11 +8,11 @@ const props = defineProps({
 });
 
 const checked=ref(false)
-const getValue = inject('updateValue')
+const updateValue = inject('updateValue')
 
 const handleInput = (event) => {
-  if (getValue) {
-    getValue(props.field_name, event);
+  if (updateValue) {
+    updateValue(props.field_name, event);
   }
 };
 </script>

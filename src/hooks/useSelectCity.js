@@ -1,8 +1,8 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-export const useSelectCity = (field_name, updateValue) => {
-    const value = ref('');
+export const useSelectCity = (field_name, updateValue,formValues) => {
+    const value = ref(formValues[field_name] !== null ? formValues[field_name] : '');
     const options = ref([]);
     const allOptions = ref([]);
 
@@ -43,6 +43,7 @@ export const useSelectCity = (field_name, updateValue) => {
         if (updateValue) {
             updateValue(field_name, event);
         }
+        formValues[field_name] = event
     };
 
     return {

@@ -9,8 +9,8 @@ const props = defineProps({
 });
 
 const updateValue = inject('updateValue');
-
-const {value, options, filterOptions, handleInput} = useSelectCity(props.field_name, updateValue);  // Используем хук
+const formValues = inject('formValues')
+const {value, options, filterOptions, handleInput} = useSelectCity(props.field_name, updateValue,formValues);  // Используем хук
 </script>
 
 <template>

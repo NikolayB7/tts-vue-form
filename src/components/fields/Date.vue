@@ -10,8 +10,8 @@ const props = defineProps({
   field_name: String,
   placeholder: String
 })
-const isLoading = ref(true)
-const value = ref()
+const formValues = inject('formValues')
+const value = ref(formValues[props.field_name] !== null ? formValues[props.field_name] : '')
 const formattedDate = computed(() => {
   if (!value.value) return null
 
@@ -23,12 +23,13 @@ const formattedDate = computed(() => {
   return `${day}.${month}.${year}`
 })
 
-const getValue = inject('updateValue')
+const updateValue = inject('updateValue')
 
 const handleInput = (event) => {
-  if (getValue) {
-    getValue(props.field_name, formattedDate)
+  if (updateValue) {
+    updateValue(props.field_name, formattedDate)
   }
+    formValues[props.field_name] = formattedDate
 }
 </script>
 

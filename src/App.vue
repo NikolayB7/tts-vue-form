@@ -54,11 +54,6 @@ const enteredData = (stepField)=>{
 
 const validateStep = (iteration) => {
 
-    // const result = checkEnteredValues(allFormStep.value[iteration].fields, formValues);
-    // console.log(result,'__result checkEnteredValues');
-
-
-
     allFormStep.value = allFormStep.value.map((item, index) => {
         let visible = false;
         let edit = false;

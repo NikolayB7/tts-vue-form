@@ -1,7 +1,7 @@
 <script setup>
 import IntlTelInput from "intl-tel-input/vueWithUtils";
 import "intl-tel-input/styles";
-import {defineProps, inject} from "vue";
+import {defineProps, inject, ref} from "vue";
 
 defineOptions({
   inheritAttrs: false
@@ -11,12 +11,14 @@ const props = defineProps({
   label: String,
   field_name:String
 });
-
-const getValue = inject('updateValue')
+const formValues = inject('formValues')
+const value = ref(formValues[props.field_name] !== null ? formValues[props.field_name] : '')
+const updateValue = inject('updateValue')
 const handleInput = (event) => {
-  if (getValue) {
-    getValue(props.field_name, event.target.value);
+  if (updateValue) {
+    updateValue(props.field_name, event.target.value);
   }
+    formValues[props.field_name] = event.target.value
 };
 </script>
 
@@ -27,6 +29,7 @@ const handleInput = (event) => {
     <div class="el-input__wrapper">
       <IntlTelInput
           @input="handleInput"
+          :value="value"
           class="el-input__inner"
           :options="{
       initialCountry: 'us',
