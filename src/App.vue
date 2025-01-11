@@ -6,6 +6,7 @@ import OrderStep from "/public/order-step.json"
 
 import FormStep from "./components/FormStep.vue";
 import OrderSidebar from "./components/OrderSidebar.vue";
+import LayoutComponent from "./components/LayoutComponent.vue";
 
 const formValues = ref({})
 const updateValue = (field, value) => {
@@ -95,6 +96,7 @@ provide('validateStep',validateStep)
 </script>
 
 <template>
+  <LayoutComponent/>
     <header class="bg-white shadow-sm py-5 mb-10">
         <div class="container mx-auto">
             Logo

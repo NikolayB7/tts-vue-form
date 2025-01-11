@@ -6,9 +6,400 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.2.1/build/css/intlTelInput.css">
     <title>tts Vue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="bg-gray-100 w-full overflow-x-hidden">
+    <div class="container font-raleway">
+
+      <div class="sticky z-40 top-0 bg-gray-100 -mx-4 px-4 md:-mx-8 md:px-8 rounded-b-3xl mb-12">
+        <div class="flex justify-between text-lg py-2">
+          <p class="flex-1 hidden xl:block">Taxi Transfer Service - Бронирование трансферов в Италии</p>
+          <div class="flex-1 tracking-wide flex justify-between md:justify-end w-full">
+            <a href="tel:+393203204665" class="group transition-all duration-100 ease-in-out">
+              <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">+39 (320) 320-46-65</span>
+            </a>
+            <div class="hidden md:inline-block">
+              <span class="px-3 text-gray-300">|</span>
+              <a href="mailto:info@ttstaxi.com" class="group transition-all duration-100 ease-in-out">
+                <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">info@ttstaxi.com</span>
+              </a>
+              <span class="px-3 text-gray-300">|</span>
+            </div>
+            <a href="http://laravel.test/transfer-reservation" class="group transition-all duration-100 ease-in-out">
+              <span class="text-cyan-600 font-bold bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Заказать поездку</span>
+            </a>
+          </div>
+        </div>
+        <header class="shadow-xl bg-white rounded-3xl -mx-4 px-4 md:-mx-8 md:px-8 py-2 md:py-0">
+          <div class="flex justify-between items-center">
+            <a href="http://laravel.test">
+              <img class="hidden md:block" src="http://laravel.test/i/logo.png" alt="Taxi Transfer Service Logo">
+              <img class="block md:hidden" src="http://laravel.test/i/logo-mobile.png" alt="Taxi Transfer Service Logo Mobile">
+            </a>
+            <div class="flex md:hidden space-x-2 items-center">
+              <label class="relative z-40 cursor-pointer px-3 py-6" for="mobile-menu">
+                <input class="peer hidden" type="checkbox" id="mobile-menu">
+                <div class="relative z-50 block h-[1px] w-7 bg-black bg-transparent content-[''] before:absolute before:top-[-0.35rem] before:z-50 before:block before:h-full before:w-full before:bg-black before:transition-all before:duration-200 before:ease-out before:content-[''] after:absolute after:right-0 after:bottom-[-0.35rem] after:block after:h-full after:w-full after:bg-black after:transition-all after:duration-200 after:ease-out after:content-[''] peer-checked:bg-transparent before:peer-checked:top-0 before:peer-checked:w-full before:peer-checked:rotate-45 before:peer-checked:transform after:peer-checked:bottom-0 after:peer-checked:w-full after:peer-checked:-rotate-45 after:peer-checked:transform"></div>
+                <div class="fixed inset-0 z-40 hidden h-full w-full bg-black/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
+                <div class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0">
+                  <div class="float-right min-h-full w-[85%] bg-white px-6 pt-12 shadow-2xl">
+                    <menu>
+                      <li class="mb-2 text-xl"><a href="http://laravel.test/airports">Аэропорты</a></li>
+                      <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                        <li>
+                          <a href="http://laravel.test/airports/bergamo-bgu" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/airports/marco-polo-vce" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Марко Поло</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/airports/milan-linate-lin" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Линате</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/airports/milan-malpensa-mpx" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Мальпенса</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/airports/transfer-from-verona-airport" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт  Верона</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/airports/treviso" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Тревизо</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <li class="mb-2 text-xl"><a href="http://laravel.test/cities">Города</a></li>
+                      <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                        <li>
+                          <a href="http://laravel.test/cities/transfer-florence-and-florence-airport" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Флоренция</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/cities/transfer-milan" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Милан</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/cities/transfer-rome-and-rome-airport" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Рим</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/cities/transfer-venice" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out"> Венеция</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/cities/transfer-verona" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Верона</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <li class="mb-2 text-xl"><a href="http://laravel.test/resort">Курорты</a></li>
+                      <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                        <li>
+                          <a href="http://laravel.test/resort/thermal-resorts" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Термальные курорты</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/resort/ski-resorts" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Горнолыжные курорты</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/resort/transfer-sea" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Морские курорты</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://laravel.test/resort/transfer-lakes" class="group transition-all duration-100 ease-in-out">
+                            <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Озерные курорты</span>
+                          </a>
+                        </li>
+                      </ul>
+                      <li class="mb-2 text-xl"><a href="http://laravel.test/blog">Блог</a></li>
+                      <li class="mb-2 text-xl"><a href="http://laravel.test/about">Компания</a></li>
+                    </menu>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <nav class="hidden md:block">
+              <ul class="flex text-xl gap-4 tracking-wide font-semibold">
+                <li>
+                  <a data-dropdown-toggle="mmdrpdwn0" data-dropdown-trigger="hover" data-dropdown-delay="100" href="http://laravel.test/airports" class="flex items-center group transition-all duration-100 ease-in-out">
+                    <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорты</span>
+                    <span>
+                                    <svg class="w-2.5 h-2.5 ms-1.5 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                                    </svg>
+                                </span>
+                  </a>
+                </li>
+                <div id="mmdrpdwn0" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(802.5px, 128.5px, 0px);" data-popper-placement="bottom">
+                  <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                    <li>
+                      <a href="http://laravel.test/airports/bergamo-bgu" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/airports/marco-polo-vce" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Марко Поло</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/airports/milan-linate-lin" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Линате</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/airports/milan-malpensa-mpx" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Мальпенса</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/airports/transfer-from-verona-airport" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт  Верона</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/airports/treviso" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Тревизо</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <li>
+                  <a data-dropdown-toggle="mmdrpdwn1" data-dropdown-trigger="hover" data-dropdown-delay="100" href="http://laravel.test/cities" class="flex items-center group transition-all duration-100 ease-in-out">
+                    <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Города</span>
+                    <span>
+                                    <svg class="w-2.5 h-2.5 ms-1.5 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                                    </svg>
+                                </span>
+                  </a>
+                </li>
+                <div id="mmdrpdwn1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(928.5px, 128.5px, 0px);" data-popper-placement="bottom">
+                  <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                    <li>
+                      <a href="http://laravel.test/cities/transfer-florence-and-florence-airport" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Флоренция</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/cities/transfer-milan" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Милан</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/cities/transfer-rome-and-rome-airport" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Рим</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/cities/transfer-venice" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out"> Венеция</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/cities/transfer-verona" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Верона</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <li>
+                  <a data-dropdown-toggle="mmdrpdwn2" data-dropdown-trigger="hover" data-dropdown-delay="100" href="http://laravel.test/resort" class="flex items-center group transition-all duration-100 ease-in-out">
+                    <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Курорты</span>
+                    <span>
+                                    <svg class="w-2.5 h-2.5 ms-1.5 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path>
+                                    </svg>
+                                </span>
+                  </a>
+                </li>
+                <div id="mmdrpdwn2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(1042px, 128.5px, 0px);" data-popper-placement="bottom">
+                  <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                    <li>
+                      <a href="http://laravel.test/resort/thermal-resorts" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Термальные курорты</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/resort/ski-resorts" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Горнолыжные курорты</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/resort/transfer-sea" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Морские курорты</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://laravel.test/resort/transfer-lakes" class="group transition-all duration-100 ease-in-out">
+                        <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Озерные курорты</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <li>
+                  <a href="http://laravel.test/blog" class="flex items-center group transition-all duration-100 ease-in-out">
+                    <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Блог</span>
+                  </a>
+                </li>
+                <div id="mmdrpdwn3" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                  <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                  </ul>
+                </div>
+                <li>
+                  <a href="http://laravel.test/about" class="flex items-center group transition-all duration-100 ease-in-out">
+                    <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Компания</span>
+                  </a>
+                </li>
+                <div id="mmdrpdwn4" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-auto">
+                  <ul class="text-xl p-4 -mt-2 space-y-2 dark:text-gray-200" aria-labelledby="dropdownHelperButton">
+                  </ul>
+                </div>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+      <div>
+        <h1 class="text-5xl md:text-6xl font-black mb-6">Заказ трансфера</h1>
+      </div>
+
+      <div id="app"></div>
+
+      <footer class="mt-12 rounded-3xl bg-gray-200 -mx-4 px-4 md:-mx-8 md:px-8 mb-8 py-4 md:py-8">
+        <div class="flex gap-6">
+          <div class="hidden xl:block flex-1">
+            <p>Русское такси в Италии – делает ваш отдых комфортным. Благодаря высокому качеству сервиса вы можете быть абсолютно уверены  комфортности вашей поездки. Мы предоставляем:</p>
+            <ul>
+              <li>стандартные автомобили для тех, кто хочет путешествовать с комфортом, но недорого;</li>
+              <li>авто премиум класса для тех, кто привык к высокому уровню автомобиля и обслуживания, для комфорта в деловых поездках;</li>
+              <li>минивены для семейной поездки;</li>
+              <li>микроавтобусы для больших и дружных компаний;</li>
+              <li>комфортабельные автобусы большой вместимости для организации групповых поездок и туров.</li>
+            </ul>
+            <p>Общащаясь к нам, вы обеспечиваете себя безопасным и удобным путешествием.</p></div>
+          <div class="flex-1">
+            <p class="font-bold">Аэропорты в Италии</p>
+            <ul>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Аэропорт Бергамо</span>
+                </a>
+              </li>
+            </ul>
+            <p class="mt-4 font-bold">Компания</p>
+            <ul>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Контакты</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Отзывы</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Контакты</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Контакты</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Контакты</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group transition-all duration-100 ease-in-out text-teal-800">
+                  <span class="bg-left-bottom bg-gradient-to-r from-cyan-600 to-cyan-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] pb-1 transition-all duration-200 ease-out">Контакты</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="hidden md:block flex-1">
+            <div class="bg-white p-8 rounded-2xl space-y-6">
+              <div class="bg-gray-200 p-4 rounded-md">
+                <label for="from" class="block text-base font-medium text-black">Откуда</label>
+                <div class="flex items-center mt-1 space-x-2">
+                  <img src="http://laravel.test/i/svg/point.svg" class="h-6 w-6 text-black" alt="Откуда">
+                  <input id="from" type="text" placeholder="Город, аэропорт, ..." class="border-none focus:ring-0 w-full bg-gray-200 text-black placeholder-gray-500">
+                </div>
+              </div>
+              <div class="bg-gray-200 p-4 rounded-md">
+                <label for="to" class="block text-base font-medium text-black">Куда</label>
+                <div class="flex items-center mt-1 space-x-2">
+                  <img src="http://laravel.test/i/svg/point.svg" class="h-6 w-6 text-black" alt="Куда">
+                  <input id="to" type="text" placeholder="Город, аэропорт, ..." class="border-none focus:ring-0 w-full bg-gray-200 text-black placeholder-gray-500">
+                </div>
+              </div>
+
+              <div class="bg-gray-200 p-4 rounded-md">
+                <label for="to" class="block text-base font-medium text-black">Когда</label>
+                <div class="flex items-center mt-1 space-x-2">
+                  <img src="http://laravel.test/i/svg/time.svg" class="h-6 w-6 text-black" alt="Когда">
+                  <input id="when" type="text" placeholder="Дата и время подачи" class="border-none focus:ring-0 w-full bg-gray-200 text-black placeholder-gray-500">
+                </div>
+              </div>
+
+              <button class="bg-cyan-700 text-white text-xl w-full py-3 rounded-md">Забронировать поездку</button>
+            </div>        </div>
+        </div>
+      </footer>
+    </div>
+
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
