@@ -1,0 +1,20 @@
+[
+  {
+    "key" : "rideDetails",
+    "title": "Детали поездки",
+    "formComponent": "RideDetails",
+    "previewComponent": "RideDetailsPreview"
+  },
+  {
+    "key" : "carDetails",
+    "title": "Выбор автомобиля",
+    "formComponent": "CarDetails",
+    "previewComponent": "CarDetailsPreview"
+  },
+  {
+    "key" : "userDetails",
+    "title": "Выбор автомобиля",
+    "formComponent": "UserDetails",
+    "previewComponent": null
+  }
+]

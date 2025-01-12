@@ -2,19 +2,40 @@
 
 import {provide, ref, computed, watch, onMounted, reactive} from "vue";
 
+import StepConfigurations from "/public/steps-components.json"
 import OrderStep from "/public/order-step.json"
 
+import StepsWrapper from "./components/steps/StepsWrapper.vue";
 import FormStep from "./components/FormStep.vue";
 import OrderSidebar from "./components/OrderSidebar.vue";
-import LayoutComponent from "./components/LayoutComponent.vue";
 
 const formValues = ref({})
 const updateValue = (field, value) => {
     formValues.value[field] = value;
 };
 
-// visible - the field is open and currently being edited
-// edit - short version for editing
+// todo maybe move to file with steps configurations
+const steps = ref(
+    StepConfigurations.map((step, index) => ({
+        ...step,
+        isEditState: index === 0,
+        isPreviewState: false,
+    })
+))
+
+
+const toggleStepState = (key, stateVariable) => {
+  steps.value.map((step) => {
+    if (step.key === key) {
+      step.isEditState = stateVariable === 'isEditState';
+      step.isPreviewState = stateVariable === 'isPreviewState';
+    }
+  });
+};
+
+provide('provided', {
+  toggleStepState
+});
 
 const allFormStep = ref(
     OrderStep.map((step) => ({
@@ -96,21 +117,11 @@ provide('validateStep',validateStep)
 </script>
 
 <template>
-  <LayoutComponent/>
+<!--  <LayoutComponent/>-->
   <div class="mt-12">
     <div class="flex space-x-12">
       <div class="w-full md:w-2/3">
-        <div
-          :key="index"
-          v-for="(step, index) in allFormStep"
-        >
-          <FormStep
-            v-if="step.visible || step.edit"
-            :iteration="index"
-            :step="step"
-            :formValues="formValues"
-          />
-        </div>
+        <StepsWrapper :steps="steps"/>
       </div>
       <div class="hidden w-1/3 md:block">
         <OrderSidebar :steps="stepsSidebar"/>
