@@ -97,35 +97,26 @@ provide('validateStep',validateStep)
 
 <template>
   <LayoutComponent/>
-    <header class="bg-white shadow-sm py-5 mb-10">
-        <div class="container mx-auto">
-            Logo
+  <div class="mt-12">
+    <div class="flex space-x-12">
+      <div class="w-full md:w-2/3">
+        <div
+          :key="index"
+          v-for="(step, index) in allFormStep"
+        >
+          <FormStep
+            v-if="step.visible || step.edit"
+            :iteration="index"
+            :step="step"
+            :formValues="formValues"
+          />
         </div>
-    </header>
-    <div class="container mx-auto">
-        <div class="flex">
-            <div
-                class="basis-1/2 mr-5"
-            >
-                <div
-                    v-for="(step, index) in allFormStep"
-                    :key="index"
-                >
-                    <FormStep
-                        v-if="step.visible || step.edit"
-                        :iteration="index"
-                        :step="step"
-                        :formValues="formValues"
-                    />
-                </div>
-            </div>
-            <div class="basis-1/3">
-                <OrderSidebar :steps="stepsSidebar"/>
-            </div>
-        </div>
+      </div>
+      <div class="hidden w-1/3 md:block">
+        <OrderSidebar :steps="stepsSidebar"/>
+      </div>
     </div>
-
-
+  </div>
 </template>
 
 <style scoped>
