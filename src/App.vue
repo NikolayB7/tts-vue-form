@@ -24,6 +24,25 @@ const steps = ref(
 ))
 
 
+const formData = ref({
+  departure: '',
+  departureId: 0,
+  destination: '',
+  destinationId: 0,
+  dateTime: '',
+  isReturnOption: false,
+  returnDateTime: '',
+  comment: '',
+  countPassengers: 1,
+  countChildSeats: 0,
+  //
+  selectedCarId: null,
+  //
+  userName: '',
+  userPhone: '',
+  userEmail: '',
+});
+
 const toggleStepState = (key, stateVariable) => {
   steps.value.map((step) => {
     if (step.key === key) {
@@ -33,8 +52,27 @@ const toggleStepState = (key, stateVariable) => {
   });
 };
 
+const saveFormValues = (fields) => {
+  const diff = Object.keys(fields).filter((key) => !(key in formData.value));
+  if (diff.length) {
+    const message = `Error: some fields not in formData: ${diff.join(', ')}`;
+    throw new Error(message);
+  }
+
+  formData.value = {
+    ...formData.value,
+    ...fields,
+  };
+};
+
+const getFormValues = (fields) => {
+  return formData.value;
+};
+
 provide('provided', {
-  toggleStepState
+  toggleStepState,
+  saveFormValues,
+  getFormValues,
 });
 
 const allFormStep = ref(

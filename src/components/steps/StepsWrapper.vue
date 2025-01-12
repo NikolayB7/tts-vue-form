@@ -20,9 +20,7 @@ const stepComponents = {
 </script>
 
 <template>
-  <div
-      v-for="(step) in steps"
-  >
+  <div v-for="(step) in steps">
     <div>
       <Transition name="flash">
         <div v-if="step.isEditState" class="bg-white rounded-3xl w-full px-6 py-4 mb-4 sm:mb-6">
@@ -40,11 +38,11 @@ const stepComponents = {
 
 <style scoped>
 .flash-enter-active, .flash-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s linear, transform 0.2s linear;
 }
 
 .flash-enter, .flash-leave-to {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 </style>

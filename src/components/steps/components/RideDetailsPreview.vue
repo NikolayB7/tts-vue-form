@@ -1,7 +1,7 @@
 <script setup>
 import {useProvided} from "../../../hooks/useProvided.js";
 //
-const {toggleStepState} = useProvided()
+const {toggleStepState, getFormValues} = useProvided()
 const onEditButtonClick = () => {
   toggleStepState('rideDetails', 'isEditState')
 }
@@ -14,12 +14,15 @@ const onEditButtonClick = () => {
     </div>
     <hr class="my-2">
     <div class="text-xl">
-      <b>Венеция – Верона</b>
-      <p class="mt-2"><span class="text-slate-600">Дата / время:</span> 12.12.2021 22:30</p>
-      <p class="mt-2"><span class="text-slate-600">Обратно: </span> 12.12.2021 22:30</p>
-      <p class="mt-2"><span class="text-slate-600">Комментарий: </span> Alverà, 70, Cortina dʼAmpezzo</p>
-      <p class="mt-2"><span class="text-slate-600">Люди: </span> 2</p>
-      <p class="mt-2"><span class="text-slate-600">Детские кресла: </span> Не нужны</p>
+      <b>{{ `${getFormValues().departure} – ${getFormValues().destination}` }}</b>
+      <p class="mt-2"><span class="text-slate-600">Дата / время:</span> {{ getFormValues().dateTime }}</p>
+      <p class="mt-2">
+        <span class="text-slate-600">Обратно: </span> {{ getFormValues().returnDateTime }}</p>
+      <p v-if="getFormValues().comment" class="mt-2">
+        <span class="text-slate-600">Комментарий: </span> {{getFormValues().comment}}
+      </p>
+      <p class="mt-2"><span class="text-slate-600">Люди: </span> {{getFormValues().countPassengers}}</p>
+      <p class="mt-2"><span class="text-slate-600">Детские кресла: </span> {{getFormValues().countChildSeats === 0 ? 'Не нужны' : getFormValues().countChildSeats}}</p>
     </div>
   </div>
 </template>
