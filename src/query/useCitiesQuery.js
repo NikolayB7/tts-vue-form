@@ -1,31 +1,29 @@
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import {onMounted, ref} from "vue";
+import axios from "axios";
 
-
-// hook to fetch cities from the API one time and filter them
 export const useCitiesQuery = () => {
-    const cities = ref([]);
+    const options = ref([]);
 
     const fetchAllOptions = async () => {
         try {
             const response = await axios.get(import.meta.env.VITE_CITIES_API);
 
-            cities.value = response.data.map((item) => ({
+            options.value = response.data.map((item) => ({
+                id: item.id,
                 name: item.name,
-                value: item.id,
-                tags: item.tags.toLowerCase().split(', '),
+                lookup: item.id + ' ' + item.tags.toLowerCase().split(', ').join(' '),
             }));
+
         } catch (error) {
             console.error('Error fetching options:', error);
         }
     };
-
 
     onMounted(() => {
         fetchAllOptions();
     });
 
     return {
-        cities: cities.value,
+        options,
     };
 };

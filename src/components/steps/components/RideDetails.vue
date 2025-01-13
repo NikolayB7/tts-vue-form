@@ -5,6 +5,7 @@ import HtmlSelect from "../../fields/HtmlSelect.vue";
 import HtmlTextarea from "../../fields/HtmlTextarea.vue";
 import HtmlCheckbox from "../../fields/HtmlCheckbox.vue";
 import TypeaheadCitySelect from "../../fields/TypeaheadCitySelect.vue";
+import HtmlDatetime from "../../fields/HtmlDatetime.vue";
 
 defineProps({
   step: Object,
@@ -13,10 +14,8 @@ defineProps({
 const {toggleStepState, saveFormValues, getFormValues} = useProvided()
 
 const formDataRef = ref({
-  departure: getFormValues().departure,
-  departureId: getFormValues().departureId,
-  destination: getFormValues().destination,
-  destinationId: getFormValues().destinationId,
+  departure: getFormValues().departure, // todo from params
+  destination: getFormValues().destination, //todo from params
   dateTime: getFormValues().dateTime,
   isReturnOption: getFormValues().isReturnOption,
   returnDateTime: getFormValues().returnDateTime,
@@ -45,6 +44,7 @@ const onTypeaheadCitySelectChange = (fieldName, value) => {
           label="Откуда"
           fieldName="departure"
           placeholder="Город, аэропорт, ..."
+          v-model="formDataRef.departure"
       />
       <TypeaheadCitySelect
           label="Куда"
@@ -53,30 +53,12 @@ const onTypeaheadCitySelectChange = (fieldName, value) => {
           v-model="formDataRef.destination"
       />
     </div>
-<!--    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mb-4 sm:mb-6">-->
-<!--      <div class="flex-1">-->
-<!--        <label for="from" class="block text-base font-medium text-black">Откуда</label>-->
-<!--        <div class="flex items-center mt-1 space-x-2">-->
-<!--          <input id="from" type="text" placeholder="Город, аэропорт, ..."-->
-<!--                 class="border-gray-300 rounded-xl h-12 w-full text-black placeholder-gray-500">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="flex-1">-->
-<!--        <label for="from" class="block text-base font-medium text-black">Куда</label>-->
-<!--        <div class="flex items-center mt-1 space-x-2">-->
-<!--          <input id="from" type="text" placeholder="Город, аэропорт, ..."-->
-<!--                 class="border-gray-300 rounded-xl h-12 w-full text-black placeholder-gray-500">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
     <div class="flex space-x-6 mb-4 sm:mb-6">
-      <div class="flex-1">
-        <label for="from" class="block text-base font-medium text-black">Дата и время</label>
-        <div class="flex items-center mt-1 space-x-2">
-          <input id="from" type="text" placeholder="Выберите дату и время поездки"
-                 class="border-gray-300 rounded-xl h-12 w-full text-black placeholder-gray-500">
-        </div>
-      </div>
+      <HtmlDatetime
+          label="Дата и время"
+          fieldName="dateTime"
+          v-model="formDataRef.dateTime"
+      />
     </div>
     <div class="flex">
       <HtmlCheckbox
@@ -90,13 +72,12 @@ const onTypeaheadCitySelectChange = (fieldName, value) => {
     <div v-if="formDataRef.isReturnOption">
 
       <div class="border-l-2 pt-3 pl-3 flex space-x-6">
-        <div class="flex-1">
-          <label for="from" class="block text-base font-medium text-black">Дата обратного трансфера</label>
-          <div class="flex items-center mt-1 space-x-2">
-            <input id="from" type="text" placeholder="Выберите дату и время обратной поездки"
-                   class="border-gray-300 rounded-xl h-12 w-full text-black placeholder-gray-500">
-          </div>
-        </div>
+        <HtmlDatetime
+            label=""
+            fieldName="returnDateTime"
+            placeholder="Выберите дату и время обратной поездки"
+            v-model="formDataRef.returnDateTime"
+        />
       </div>
     </div>
     </Transition>

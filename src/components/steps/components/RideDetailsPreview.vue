@@ -14,7 +14,7 @@ const onEditButtonClick = () => {
     </div>
     <hr class="my-2">
     <div class="text-xl">
-      <b>{{ `${getFormValues().departure} – ${getFormValues().destination}` }}</b>
+      <b>{{ `${getFormValues().departure.name} – ${getFormValues().destination.name}` }}</b>
       <p class="mt-2"><span class="text-slate-600">Дата / время:</span> {{ getFormValues().dateTime }}</p>
       <p class="mt-2">
         <span class="text-slate-600">Обратно: </span> {{ getFormValues().returnDateTime }}</p>
