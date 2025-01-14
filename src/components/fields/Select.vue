@@ -15,8 +15,11 @@ const {value, options, filterOptions, handleInput} = useSelectCity(props.field_n
 
 <template>
     <div>
-        {{ label }}
+        <div class="block text-base font-medium text-black mb-1">
+            {{ label }}
+        </div>
         <el-select
+            class="custom-field"
             v-model="value"
             @change="handleInput"
             filterable
@@ -35,4 +38,8 @@ const {value, options, filterOptions, handleInput} = useSelectCity(props.field_n
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.custom-field :deep(.el-select__wrapper) {
+    @apply text-sm px-4 py-3 border border-gray-300 rounded-lg;
+}
+</style>

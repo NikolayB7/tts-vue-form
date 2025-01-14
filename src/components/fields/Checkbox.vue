@@ -19,6 +19,7 @@ const handleInput = (event) => {
 
 <template>
   <el-checkbox
+      class="custom-field"
       v-model="checked"
       @change="handleInput"
   >
@@ -27,5 +28,10 @@ const handleInput = (event) => {
 </template>
 
 <style scoped>
-
+[type='checkbox']{
+    border: none;
+}
+.custom-field :deep(.el-checkbox__label){
+    @apply text-base font-medium text-black ml-2
+}
 </style>

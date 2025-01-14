@@ -11,7 +11,8 @@
         "type": "text",
         "label": "Откуда",
         "required": true,
-        "placeholder": "Введите место"
+        "placeholder": "Введите место",
+        "placement": "half"
       },
       {
         "type_block": "select",
@@ -20,7 +21,8 @@
         "type": "text",
         "label": "Куда",
         "required": true,
-        "placeholder": "Введите место"
+        "placeholder": "Введите место",
+        "placement": "half"
       },
       {
         "type_block": "date",

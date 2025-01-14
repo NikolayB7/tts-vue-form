@@ -31,8 +31,8 @@ const validateStep = inject('validateStep')
     <div class="bg-white rounded-xl shadow-2xl p-3 mb-5">
         <h3 class="font-bold text-xl mb-2">{{ step.title }}</h3>
         <Transition name="flash">
-            <div v-if="step.visible">
-                <div class="mb-3" v-for="(field, fieldIndex) in step.fields" :key="fieldIndex" v-auto-animate>
+            <div v-if="step.visible" class="form-grid">
+                <div :class=" field.placement ? `form-grid-el_half`:`form-grid-el`" v-for="(field, fieldIndex) in step.fields" :key="fieldIndex">
                     <component
                         :is="fieldComponents[field.type_block]"
                         :label="field.label"
@@ -43,9 +43,9 @@ const validateStep = inject('validateStep')
                         v-if="!(field.field_name === 'date2' && !formValues.reverse)"
                     />
                 </div>
-                <div class="flex justify-end">
+                <div class="flex justify-end w-full">
                     <button
-                        class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                        class="w-full sm:w-auto px-4 bg-cyan-700 text-white text-xl py-3 rounded-md"
                         @click="validateStep(iteration + 1)"
                     >
                         {{ step.btn_next_step_text }}
@@ -65,5 +65,24 @@ const validateStep = inject('validateStep')
 .flash-enter, .flash-leave-to {
     opacity: 0;
     transform: scale(0.8);
+}
+
+[type="text"]{
+    border:none;
+    padding: 0;
+}
+
+.form-grid{
+    @apply flex flex-wrap justify-between;
+}
+.form-grid-el,.form-grid-el_half:not(:last-child){
+    @apply mb-2
+}
+.form-grid-el{
+   @apply w-full shrink-0 grow-0;
+}
+.form-grid-el_half{
+    width: 49%;
+    @apply shrink-0 grow-0;
 }
 </style>

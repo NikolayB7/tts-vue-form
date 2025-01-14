@@ -15,7 +15,7 @@ const renderEditInfo = inject('renderEditInfo')
   <div>
     <div class="flex justify-end -mt-8">
       <button
-          class="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
+          class="text-gray-400"
           @click="validateStep(iteration)"
       >
         Изменить

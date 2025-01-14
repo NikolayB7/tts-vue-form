@@ -25,8 +25,27 @@ const handleInput = (event) => {
 </script>
 
 <template>
-    {{ label }}
-    <el-input :type="type" :placeholder="placeholder" v-model="value" @input="handleInput"></el-input>
+    <div class="block text-base font-medium text-black mb-1">
+        {{ label }}
+    </div>
+    <el-input
+        class="custom-field"
+        :type="type"
+        :placeholder="placeholder"
+        v-model="value"
+        @input="handleInput"
+    >
+    </el-input>
 </template>
 
-<style scoped></style>
+<style scoped>
+[type="text"]{
+    border:none !important;
+}
+.custom-field :deep(textarea){
+    @apply border-gray-300 rounded-xl h-24 w-full text-black placeholder-gray-500
+}
+.custom-field :deep(.el-input__wrapper){
+    @apply text-sm px-4 py-2 border border-gray-300 rounded-lg;
+}
+</style>
