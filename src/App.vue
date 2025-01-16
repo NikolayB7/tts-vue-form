@@ -41,20 +41,7 @@ const renderEditInfo = computed(() => {
     });
 });
 
-const enteredData = (stepField)=>{
-    // formValues.value[field]
-    console.log(stepField)
-}
-
-// const checkEnteredValues = (fields, formValues) => {
-//     return fields.map(field => ({
-//         ...field,
-//         isFilled: formValues.value[field.field_name] !== null && formValues.value[field.field_name] !== ''
-//     }));
-// };
-
-const validateStep = (iteration) => {
-
+const switchingStep = (iteration) => {
     allFormStep.value = allFormStep.value.map((item, index) => {
         let visible = false;
         let edit = false;
@@ -68,6 +55,10 @@ const validateStep = (iteration) => {
                 visible = true;
                 edit = false;
                 break;
+            case index > iteration:
+                visible = item.visible; // Сохраняем текущее состояние
+                edit = item.edit;       // Сохраняем текущее состояние
+                break;
         }
 
         return {
@@ -79,6 +70,7 @@ const validateStep = (iteration) => {
 };
 
 
+
 onMounted(()=>{
     OrderStep.forEach(step => {
         step.fields.forEach(field => {
@@ -87,12 +79,12 @@ onMounted(()=>{
             }
         });
     });
-    validateStep(0);
+    switchingStep(0);
 })
 provide('formValues',formValues)
 provide('renderEditInfo',renderEditInfo)
 provide('updateValue',updateValue)
-provide('validateStep',validateStep)
+provide('switchingStep',switchingStep)
 </script>
 
 <template>
@@ -102,7 +94,7 @@ provide('validateStep',validateStep)
         </div>
     </header>
     <div class="mx-auto">
-        <div class="flex">
+        <div class="flex space-x-12">
             <div
                 class="w-full md:w-2/3"
             >

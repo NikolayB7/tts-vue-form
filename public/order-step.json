@@ -106,7 +106,8 @@
         "type": "text",
         "label": "Введите имя",
         "required": true,
-        "placeholder": "Как вас зовут?"
+        "placeholder": "Как вас зовут?",
+        "placement": "half"
       },
       {
         "type_block": "input",
@@ -115,7 +116,8 @@
         "type": "text",
         "label": "Ваш email",
         "required": false,
-        "placeholder": "Ваш адрес эл.почты"
+        "placeholder": "Ваш адрес эл.почты",
+        "placement": "half"
       },
       {
         "type_block": "phone",

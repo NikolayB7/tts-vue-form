@@ -7,7 +7,7 @@ defineProps({
   title:String,
   iteration:Number,
 })
-const validateStep = inject('validateStep')
+const switchingStep = inject('switchingStep')
 const renderEditInfo = inject('renderEditInfo')
 </script>
 
@@ -16,7 +16,7 @@ const renderEditInfo = inject('renderEditInfo')
     <div class="flex justify-end -mt-8">
       <button
           class="text-gray-400"
-          @click="validateStep(iteration)"
+          @click="switchingStep(iteration)"
       >
         Изменить
       </button>

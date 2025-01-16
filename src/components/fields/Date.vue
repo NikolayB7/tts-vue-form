@@ -34,18 +34,20 @@ const handleInput = (event) => {
 </script>
 
 <template>
-    <div class="block text-base font-medium text-black mb-1">
-        {{ label }}
-    </div>
-    <div class="custom-field">
-        <el-date-picker
-            v-model="value"
-            type="datetime"
-            format="YYYY-MM-DD HH:mm"
-            @change="handleInput"
-            :placeholder="placeholder"
-        >
-        </el-date-picker>
+    <div :class="props.field_name === 'date2' && `nested-field`">
+        <div class="block text-base font-medium text-black mb-1">
+            {{ label }}
+        </div>
+        <div class="custom-field">
+            <el-date-picker
+                v-model="value"
+                type="datetime"
+                format="YYYY-MM-DD HH:mm"
+                @change="handleInput"
+                :placeholder="placeholder"
+            >
+            </el-date-picker>
+        </div>
     </div>
 </template>
 
@@ -55,5 +57,8 @@ const handleInput = (event) => {
 }
 .custom-field :deep(.el-input__wrapper) {
     @apply border-gray-300 rounded-xl h-12 w-full text-black placeholder-gray-500 w-full;
+}
+.nested-field{
+    @apply border-l-2 pt-3 pl-3 space-x-6
 }
 </style>
